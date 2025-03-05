@@ -24,56 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 spans[1].style.opacity = '1';
                 spans[2].style.transform = 'none';
             }
-            
-    // Cart functionality
-    const cartIcon = document.querySelector('.cart-icon');
-    if (cartIcon) {
-        cartIcon.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.location.href = 'checkout.html';
         });
-    }
-});
-
-// Global cart functionality
-function addToCart(button) {
-    // Get product information
-    const card = button.closest('.part-card') || button.closest('.card');
-    const productName = card.querySelector('h3').textContent;
-    const productPrice = card.querySelector('.price').textContent;
-    
-    // Update cart count
-    const cartCount = document.querySelector('.cart-count');
-    if (cartCount) {
-        let count = parseInt(cartCount.textContent);
-        cartCount.textContent = count + 1;
-    }
-    
-    // Store in local storage (for a real implementation)
-    // This would save the cart items to be retrieved on the checkout page
-    const cartItem = {
-        name: productName,
-        price: productPrice,
-        quantity: 1
-    };
-    
-    // Show confirmation message
-    const originalText = button.innerHTML;
-    button.innerHTML = '<i class="fas fa-check"></i> Added';
-    button.style.backgroundColor = '#4CAF50';
-    button.style.color = 'white';
-    
-    setTimeout(() => {
-        button.innerHTML = originalText;
-        button.style.backgroundColor = '';
-        button.style.color = '';
-    }, 1500);
-    
-    // Alert user (in a real implementation, this would be a nicer notification)
-    setTimeout(() => {
-        alert(`${productName} has been added to your cart!`);
-    }, 500);
-}
     }
     
     // Close mobile menu when clicking outside
@@ -137,4 +88,53 @@ function addToCart(button) {
             link.classList.remove('active');
         }
     });
+    
+    // Cart functionality
+    const cartIcon = document.querySelector('.cart-icon');
+    if (cartIcon) {
+        cartIcon.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'checkout.html';
+        });
+    }
 });
+
+// Global cart functionality
+function addToCart(button) {
+    // Get product information
+    const card = button.closest('.part-card') || button.closest('.card');
+    const productName = card.querySelector('h3').textContent;
+    const productPrice = card.querySelector('.price').textContent;
+    
+    // Update cart count
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+        let count = parseInt(cartCount.textContent);
+        cartCount.textContent = count + 1;
+    }
+    
+    // Store in local storage (for a real implementation)
+    // This would save the cart items to be retrieved on the checkout page
+    const cartItem = {
+        name: productName,
+        price: productPrice,
+        quantity: 1
+    };
+    
+    // Show confirmation message
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check"></i> Added';
+    button.style.backgroundColor = '#4CAF50';
+    button.style.color = 'white';
+    
+    setTimeout(() => {
+        button.innerHTML = originalText;
+        button.style.backgroundColor = '';
+        button.style.color = '';
+    }, 1500);
+    
+    // Alert user (in a real implementation, this would be a nicer notification)
+    setTimeout(() => {
+        alert(`${productName} has been added to your cart!`);
+    }, 500);
+}
