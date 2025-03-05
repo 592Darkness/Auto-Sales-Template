@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - AutoElite | Guyana</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/theme-switcher.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/payment.js" defer></script>
+</head>
+<body class="light-theme">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Auto<span>Elite</span></h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="parts.html">Auto Parts</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Checkout</h1>
+                <p>Complete your purchase securely</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-container">
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Shopping Cart</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Payment Details</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Confirmation</div>
+                    </div>
+                </div>
+
+                <div class="checkout-columns">
+                    <!-- Cart Items -->
+                    <div class="checkout-column">
+                        <h2>Your Cart</h2>
+                        <div class="cart-items">
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="/api/placeholder/100/100" alt="Performance Brake Kit">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Performance Brake Kit</h3>
+                                    <p class="item-compatibility">Compatible with multiple luxury models</p>
+                                    <div class="item-quantity">
+                                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                        <input type="number" value="1" min="1" max="10">
+                                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="item-price">
+                                    <p>G$69,998</p>
+                                    <button class="remove-item"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="/api/placeholder/100/100" alt="Oil Change Kit">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Premium Oil Change Kit</h3>
+                                    <p class="item-compatibility">Compatible with multiple models</p>
+                                    <div class="item-quantity">
+                                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                        <input type="number" value="1" min="1" max="10">
+                                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="item-price">
+                                    <p>G$17,998</p>
+                                    <button class="remove-item"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="/api/placeholder/100/100" alt="LED Headlights">
+                                </div>
+                                <div class="item-details">
+                                    <h3>LED Headlight Conversion Kit</h3>
+                                    <p class="item-compatibility">Universal fit with adapters</p>
+                                    <div class="item-quantity">
+                                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                        <input type="number" value="1" min="1" max="10">
+                                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="item-price">
+                                    <p>G$25,998</p>
+                                    <button class="remove-item"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-summary">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span>G$113,994</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping:</span>
+                                <span>G$2,500</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax:</span>
+                                <span>G$9,398</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span>G$125,892</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Form -->
+                    <div class="checkout-column">
+                        <h2>Payment Method</h2>
+                        <div class="payment-options">
+                            <div class="payment-option active">
+                                <input type="radio" id="credit-card" name="payment-method" checked>
+                                <label for="credit-card">Credit/Debit Card</label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="paypal" name="payment-method">
+                                <label for="paypal">PayPal</label>
+                            </div>
+                        </div>
+
+                        <form id="payment-form" class="payment-form">
+                            <div class="form-group">
+                                <label for="card-holder">Cardholder Name</label>
+                                <input type="text" id="card-holder" placeholder="Name on card" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <div class="card-input-container">
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required maxlength="19">
+                                    <div class="card-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                        <i class="fab fa-cc-discover"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="expiry-date">Expiry Date</label>
+                                    <input type="text" id="expiry-date" placeholder="MM/YY" required maxlength="5">
+                                </div>
+                                <div class="form-group half">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="123" required maxlength="4">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="billing-address">Billing Address</label>
+                                <input type="text" id="billing-address" placeholder="Street address" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <input type="text" id="billing-city" placeholder="City" required>
+                                </div>
+                                <div class="form-group quarter">
+                                    <input type="text" id="billing-state" placeholder="State" required>
+                                </div>
+                                <div class="form-group quarter">
+                                    <input type="text" id="billing-zip" placeholder="ZIP" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="save-card">
+                                <label for="save-card">Save card for future purchases</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Pay Now G$125,892</button>
+
+                            <div class="secure-badge">
+                                <i class="fas fa-lock"></i> Secure payment - Your data is protected
+                            </div>
+
+                            <div class="payment-alternative">
+                                <p>Looking to finance your purchase?</p>
+                                <a href="financing.html" class="btn btn-outline btn-block">Apply for Financing</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Auto<span>Elite</span></h2>
+                    <p>Your trusted source for premium vehicles and auto parts in Guyana</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cars.html">Cars</a></li>
+                        <li><a href="parts.html">Auto Parts</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Sheriff Street, Georgetown, Guyana</p>
+                    <p><i class="fas fa-phone"></i> +592 223-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@autoelite.gy</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AutoElite Guyana. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Success Modal -->
+    <div class="modal" id="payment-success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Payment Successful!</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Your payment of <strong>G$125,892</strong> has been processed successfully.</p>
+                <p>Order Number: <strong>#AE-29875</strong></p>
+                <p>A confirmation email has been sent to your email address.</p>
+                <div class="modal-actions">
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                    <a href="#" class="btn btn-outline">View Order Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite - Premium Cars & Parts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/theme-switcher.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body class="light-theme">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Auto<span>Elite</span></h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="parts.html">Auto Parts</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="contact.html" class="btn">Get a Quote</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Perfect Ride</h1>
+                <p>Premium selection of new and pre-owned vehicles with quality parts</p>
+                <div class="hero-cta">
+                    <a href="cars.html" class="btn btn-primary">Browse Cars</a>
+                    <a href="parts.html" class="btn btn-secondary">Shop Parts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Vehicles</h2>
+            <div class="featured-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/api/placeholder/400/300" alt="Featured SUV">
+                        <span class="tag">New Arrival</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>2025 Premium SUV</h3>
+                        <p class="price">G$9,199,800</p>
+                        <div class="specs">
+                            <span><i class="fas fa-road"></i> 0 miles</span>
+                            <span><i class="fas fa-gas-pump"></i> 28 MPG</span>
+                            <span><i class="fas fa-cog"></i> Automatic</span>
+                        </div>
+                        <a href="car-details.html" class="btn btn-outline">View Details</a>
+                        <a href="financing.html" class="btn btn-secondary btn-sm">Financing</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/api/placeholder/400/300" alt="Featured Sedan">
+                        <span class="tag">Best Seller</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>2024 Luxury Sedan</h3>
+                        <p class="price">G$7,700,000</p>
+                        <div class="specs">
+                            <span><i class="fas fa-road"></i> 12,500 miles</span>
+                            <span><i class="fas fa-gas-pump"></i> 32 MPG</span>
+                            <span><i class="fas fa-cog"></i> Automatic</span>
+                        </div>
+                        <a href="car-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/api/placeholder/400/300" alt="Featured Electric">
+                        <span class="tag">Electric</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>2024 Electric Crossover</h3>
+                        <p class="price">G$10,550,000</p>
+                        <div class="specs">
+                            <span><i class="fas fa-bolt"></i> 310 mile range</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 0-60: 4.8s</span>
+                            <span><i class="fas fa-cog"></i> AWD</span>
+                        </div>
+                        <a href="car-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="cars.html" class="btn btn-primary">View All Cars</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-parts">
+        <div class="container">
+            <h2 class="section-title">Popular Auto Parts</h2>
+            <div class="featured-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/api/placeholder/400/300" alt="Performance Brakes">
+                    </div>
+                    <div class="card-content">
+                        <h3>Performance Brake Kit</h3>
+                        <p class="price">G$69,998</p>
+                        <p class="compatibility">Compatible with multiple luxury models</p>
+                        <a href="part-details.html" class="btn btn-outline">View Details</a>
+                        <button class="btn-cart-small" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/api/placeholder/400/300" alt="Oil Change Kit">
+                    </div>
+                    <div class="card-content">
+                        <h3>Premium Oil Change Kit</h3>
+                        <p class="price">G$17,998</p>
+                        <p class="compatibility">Compatible with multiple models</p>
+                        <a href="part-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/api/placeholder/400/300" alt="Custom Wheels">
+                    </div>
+                    <div class="card-content">
+                        <h3>Alloy Wheel Set (4)</h3>
+                        <p class="price">G$179,998</p>
+                        <p class="compatibility">18" - Multiple fitments available</p>
+                        <a href="part-details.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="parts.html" class="btn btn-primary">View All Parts</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Help Finding the Right Vehicle?</h2>
+                <p>Our automotive experts are here to guide you through the process</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>New & Used Cars</h3>
+                    <p>Browse our extensive inventory of premium vehicles</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Auto Parts</h3>
+                    <p>Quality parts for maintenance and upgrades</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3>Financing</h3>
+                    <p>Flexible financing options to fit your budget</p>
+                    <a href="financing.html" class="service-link">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trade-Ins</h3>
+                    <p>Get the best value for your current vehicle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Auto<span>Elite</span></h2>
+                    <p>Your trusted source for premium vehicles and auto parts</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cars.html">Cars</a></li>
+                        <li><a href="parts.html">Auto Parts</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Auto Boulevard, Cartown, CT 12345</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@autoelite.com</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AutoElite. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

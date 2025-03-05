@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financing Options - AutoElite | Guyana</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/theme-switcher.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/financing.js" defer></script>
+</head>
+<body class="light-theme">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Auto<span>Elite</span></h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="parts.html">Auto Parts</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="contact.html" class="btn">Get a Quote</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Financing Options</h1>
+                <p>Flexible payment plans to fit your budget</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="financing-section">
+        <div class="container">
+            <div class="financing-container">
+                <div class="financing-tabs">
+                    <button class="tab-btn active" data-tab="calculator">Payment Calculator</button>
+                    <button class="tab-btn" data-tab="application">Financing Application</button>
+                    <button class="tab-btn" data-tab="options">Financing Options</button>
+                </div>
+
+                <div class="tab-content active" id="calculator">
+                    <h2>Auto Loan Calculator</h2>
+                    <p>Estimate your monthly payments based on vehicle price, down payment, interest rate, and loan term.</p>
+                    
+                    <div class="calculator-container">
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label for="vehicle-price">Vehicle Price (G$)</label>
+                                <input type="number" id="vehicle-price" value="5000000" min="200000" step="100000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="down-payment">Down Payment (G$)</label>
+                                <input type="number" id="down-payment" value="1000000" min="0" step="100000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="trade-in">Trade-In Value (G$)</label>
+                                <input type="number" id="trade-in" value="0" min="0" step="100000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="interest-rate">Interest Rate (%)</label>
+                                <input type="number" id="interest-rate" value="4.5" min="0" max="25" step="0.1">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="loan-term">Loan Term (months)</label>
+                                <select id="loan-term">
+                                    <option value="36">36 months (3 years)</option>
+                                    <option value="48">48 months (4 years)</option>
+                                    <option value="60" selected>60 months (5 years)</option>
+                                    <option value="72">72 months (6 years)</option>
+                                    <option value="84">84 months (7 years)</option>
+                                </select>
+                            </div>
+                            
+                            <button id="calculate-btn" class="btn btn-primary">Calculate Payment</button>
+                        </div>
+                        
+                        <div class="calculator-results">
+                            <div class="results-card">
+                                <h3>Monthly Payment</h3>
+                                <div class="result-value" id="monthly-payment">G$74,844</div>
+                            </div>
+                            
+                            <div class="results-details">
+                                <div class="detail-row">
+                                    <span>Loan Amount:</span>
+                                    <span id="loan-amount">G$4,000,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Total Interest:</span>
+                                    <span id="total-interest">G$490,640</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Total Cost:</span>
+                                    <span id="total-cost">G$4,490,640</span>
+                                </div>
+                            </div>
+                            
+                            <div class="results-cta">
+                                <button class="btn btn-primary btn-block" id="apply-now-btn">Apply for This Rate</button>
+                                <button class="btn btn-outline btn-block" id="print-results-btn">Print Results</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="application">
+                    <h2>Financing Application</h2>
+                    <p>Complete the form below to apply for auto financing. All information is secure and encrypted.</p>
+                    
+                    <form id="financing-form" class="financing-form">
+                        <h3>Vehicle Information</h3>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="vehicle-type">Vehicle Type</label>
+                                <select id="vehicle-type" required>
+                                    <option value="">Select...</option>
+                                    <option value="new">New Vehicle</option>
+                                    <option value="used">Used Vehicle</option>
+                                </select>
+                            </div>
+                            <div class="form-group half">
+                                <label for="vehicle-year">Year</label>
+                                <input type="number" id="vehicle-year" placeholder="e.g. 2025" min="1990" max="2030" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="vehicle-make">Make</label>
+                                <input type="text" id="vehicle-make" placeholder="e.g. Toyota" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="vehicle-model">Model</label>
+                                <input type="text" id="vehicle-model" placeholder="e.g. Camry" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="vehicle-price-app">Purchase Price (G$)</label>
+                                <input type="number" id="vehicle-price-app" placeholder="e.g. 5000000" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="down-payment-app">Down Payment (G$)</label>
+                                <input type="number" id="down-payment-app" placeholder="e.g. 1000000" required>
+                            </div>
+                        </div>
+                        
+                        <h3>Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="date-of-birth">Date of Birth</label>
+                                <input type="date" id="date-of-birth" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="ssn">Social Security Number</label>
+                                <input type="text" id="ssn" placeholder="XXX-XX-XXXX" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="(XXX) XXX-XXXX" required>
+                        </div>
+                        
+                        <h3>Address Information</h3>
+                        <div class="form-group">
+                            <label for="street-address">Street Address</label>
+                            <input type="text" id="street-address" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="city">City</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group quarter">
+                                <label for="state">State</label>
+                                <select id="state" required>
+                                    <option value="">Select...</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <!-- Add all states here -->
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                            <div class="form-group quarter">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="housing-status">Housing Status</label>
+                                <select id="housing-status" required>
+                                    <option value="">Select...</option>
+                                    <option value="own">Own</option>
+                                    <option value="rent">Rent</option>
+                                    <option value="live-with-parents">Live with Parents</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group half">
+                                <label for="monthly-housing">Monthly Housing Payment (G$)</label>
+                                <input type="number" id="monthly-housing" required>
+                            </div>
+                        </div>
+                        
+                        <h3>Employment Information</h3>
+                        <div class="form-group">
+                            <label for="employer">Current Employer</label>
+                            <input type="text" id="employer" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="job-title">Job Title</label>
+                                <input type="text" id="job-title" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="employment-length">Years Employed</label>
+                                <input type="number" id="employment-length" min="0" step="0.1" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="annual-income">Annual Income (G$)</label>
+                                <input type="number" id="annual-income" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="other-income">Other Income (G$, Optional)</label>
+                                <input type="number" id="other-income">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="agree-terms" required>
+                            <label for="agree-terms">I agree to the <a href="#">terms and conditions</a> and authorize a credit check.</label>
+                        </div>
+                        
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="contact-consent">
+                            <label for="contact-consent">I consent to receiving marketing communications from AutoElite.</label>
+                        </div>
+                        
+                        <div class="secure-badge">
+                            <i class="fas fa-lock"></i> Your information is secured with 256-bit encryption
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="tab-content" id="options">
+                    <h2>Our Financing Options</h2>
+                    <p>We offer multiple financing solutions to meet your needs. Compare our options below:</p>
+                    
+                    <div class="financing-options-grid">
+                        <div class="financing-option-card">
+                            <div class="option-header">
+                                <h3>Standard Financing</h3>
+                                <div class="option-rate">From 3.9% APR</div>
+                            </div>
+                            <div class="option-body">
+                                <ul class="option-features">
+                                    <li><i class="fas fa-check"></i> Terms from 12-84 months</li>
+                                    <li><i class="fas fa-check"></i> Available for new and used vehicles</li>
+                                    <li><i class="fas fa-check"></i> Competitive interest rates</li>
+                                    <li><i class="fas fa-check"></i> No prepayment penalties</li>
+                                    <li><i class="fas fa-check"></i> Fast credit decisions</li>
+                                </ul>
+                                <div class="option-cta">
+                                    <button class="btn btn-primary btn-block option-apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="financing-option-card featured">
+                            <div class="option-tag">Most Popular</div>
+                            <div class="option-header">
+                                <h3>Premium Financing</h3>
+                                <div class="option-rate">From 2.9% APR</div>
+                            </div>
+                            <div class="option-body">
+                                <ul class="option-features">
+                                    <li><i class="fas fa-check"></i> Lower rates for qualified buyers</li>
+                                    <li><i class="fas fa-check"></i> Terms from 12-72 months</li>
+                                    <li><i class="fas fa-check"></i> Available for new vehicles</li>
+                                    <li><i class="fas fa-check"></i> Gap insurance included</li>
+                                    <li><i class="fas fa-check"></i> Extended warranty options</li>
+                                    <li><i class="fas fa-check"></i> No prepayment penalties</li>
+                                </ul>
+                                <div class="option-cta">
+                                    <button class="btn btn-primary btn-block option-apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="financing-option-card">
+                            <div class="option-header">
+                                <h3>Lease Options</h3>
+                                <div class="option-rate">Low Monthly Payments</div>
+                            </div>
+                            <div class="option-body">
+                                <ul class="option-features">
+                                    <li><i class="fas fa-check"></i> Drive a new car every 2-3 years</li>
+                                    <li><i class="fas fa-check"></i> Lower monthly payments</li>
+                                    <li><i class="fas fa-check"></i> Flexible mileage options</li>
+                                    <li><i class="fas fa-check"></i> Maintenance packages available</li>
+                                    <li><i class="fas fa-check"></i> Option to purchase at lease end</li>
+                                </ul>
+                                <div class="option-cta">
+                                    <button class="btn btn-primary btn-block option-apply-btn">Apply Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="financing-partners">
+                        <h3>Our Financing Partners</h3>
+                        <div class="partners-logos">
+                            <img src="/api/placeholder/120/60" alt="Bank Partner 1">
+                            <img src="/api/placeholder/120/60" alt="Bank Partner 2">
+                            <img src="/api/placeholder/120/60" alt="Bank Partner 3">
+                            <img src="/api/placeholder/120/60" alt="Bank Partner 4">
+                            <img src="/api/placeholder/120/60" alt="Bank Partner 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="financing-faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What credit score do I need to qualify for financing?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While we work with buyers across the credit spectrum, a score of 650+ typically qualifies for our best rates. However, we have financing options for all credit situations and work with multiple lenders to find the best solution for you.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does the financing approval process take?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Many applications receive an initial response within minutes. In some cases, additional verification may be required, which can take 24-48 hours. Our finance team works diligently to process all applications as quickly as possible.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I get pre-approved before I shop for a vehicle?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We recommend getting pre-approved before shopping. This helps you understand your budget and streamlines the purchase process. Pre-approvals are valid for 30 days and involve a soft credit inquiry that won't affect your credit score.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What documents do I need to apply for financing?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll need a valid driver's license, proof of income (pay stubs or tax returns), proof of residence, and insurance information. For specific situations, additional documentation may be required.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I refinance my auto loan later?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer refinancing options that may help lower your payment or reduce your interest rate. This is especially beneficial if your credit score has improved since your initial financing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Auto<span>Elite</span></h2>
+                    <p>Your trusted source for premium vehicles and auto parts in Guyana</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cars.html">Cars</a></li>
+                        <li><a href="parts.html">Auto Parts</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Sheriff Street, Georgetown, Guyana</p>
+                    <p><i class="fas fa-phone"></i> +592 223-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@autoelite.gy</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AutoElite Guyana. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Success Modal -->
+    <div class="modal" id="application-success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Application Submitted!</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Your financing application has been successfully submitted.</p>
+                <p>Application ID: <strong>#FIN-58421</strong></p>
+                <p>We'll review your application and contact you within 24-48 hours with a decision.</p>
+                <div class="modal-actions">
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                    <a href="cars.html" class="btn btn-outline">Browse Vehicles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

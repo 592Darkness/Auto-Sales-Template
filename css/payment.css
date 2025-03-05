@@ -1,0 +1,830 @@
+/* 
+   AutoElite - Payment & Financing Stylesheet
+   Additional styles for checkout and financing pages
+*/
+
+/* -------------- Common Styles -------------- */
+.page-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/300') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.page-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.page-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(53, 99, 233, 0.2);
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.form-row .form-group {
+    padding: 0 10px;
+    margin-bottom: 1.5rem;
+}
+
+.half {
+    width: 50%;
+}
+
+.quarter {
+    width: 25%;
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-group.checkbox input {
+    width: auto;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.form-group.checkbox label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.secure-badge {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    background-color: var(--bg-accent);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.secure-badge i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: var(--bg-primary);
+    margin: 10% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-modal {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.success-icon {
+    text-align: center;
+    font-size: 4rem;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+}
+
+.modal-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.modal.active {
+    display: block;
+}
+
+/* -------------- Checkout Page Styles -------------- */
+.cart-icon {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-right: 20px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--accent-color);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.checkout-section {
+    padding: 60px 0;
+}
+
+.checkout-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.checkout-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 50px;
+    color: var(--text-light);
+}
+
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100px;
+    height: 2px;
+    background-color: var(--border-color);
+    transform: translateY(-50%);
+}
+
+.step.active {
+    color: var(--primary-color);
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--bg-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.step.active .step-number {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.checkout-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.checkout-column h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Cart items */
+.cart-items {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.item-details {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.item-details h3 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.item-compatibility {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+    background-color: var(--bg-accent);
+}
+
+.item-quantity input {
+    width: 50px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    padding: 0;
+}
+
+.item-price {
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.remove-item:hover {
+    color: var(--accent-color);
+}
+
+.cart-summary {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-row.total {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Payment form */
+.payment-options {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.payment-option {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.payment-option input {
+    margin-right: 8px;
+}
+
+.payment-option.active label {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.card-input-container {
+    position: relative;
+}
+
+.card-icons {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.card-icons i {
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
+.payment-alternative {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.payment-alternative p {
+    margin-bottom: 10px;
+}
+
+/* -------------- Financing Page Styles -------------- */
+.financing-section {
+    padding: 60px 0;
+}
+
+.financing-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.financing-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tab-content > p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Calculator styles */
+.calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.calculator-form {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.results-card {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.results-card h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.result-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.results-details {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.results-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Financing application */
+.financing-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.financing-form h3 {
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.financing-form h3:first-of-type {
+    margin-top: 0;
+}
+
+.form-actions {
+    margin-top: 30px;
+}
+
+/* Financing options */
+.financing-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.financing-option-card {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.financing-option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.financing-option-card.featured {
+    border: 2px solid var(--primary-color);
+}
+
+.option-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-bottom-left-radius: 8px;
+}
+
+.option-header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.option-header h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.option-rate {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.option-body {
+    padding: 20px;
+}
+
+.option-features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.option-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.option-features li:last-child {
+    border-bottom: none;
+}
+
+.option-features i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.financing-partners {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.partners-logos img {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.partners-logos img:hover {
+    opacity: 1;
+}
+
+/* FAQ section */
+.financing-faq {
+    padding: 60px 0;
+    background-color: var(--bg-secondary);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.faq-toggle {
+    color: var(--primary-color);
+}
+
+.faq-toggle .fa-minus {
+    display: none;
+}
+
+.faq-item.active .faq-toggle .fa-plus {
+    display: none;
+}
+
+.faq-item.active .faq-toggle .fa-minus {
+    display: inline;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 1000px;
+}
+
+/* -------------- Responsive Styles -------------- */
+@media (max-width: 992px) {
+    .checkout-columns,
+    .calculator-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .checkout-column:first-child {
+        order: 2;
+    }
+    
+    .checkout-column:last-child {
+        order: 1;
+    }
+    
+    .step {
+        padding: 0 30px;
+    }
+    
+    .step:not(:last-child)::after {
+        width: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20px;
+    }
+    
+    .step {
+        margin-bottom: 15px;
+        padding: 0;
+    }
+    
+    .step:not(:last-child)::after {
+        display: none;
+    }
+    
+    .form-row .half,
+    .form-row .quarter {
+        width: 100%;
+    }
+    
+    .modal-content {
+        margin: 20% auto;
+        width: 95%;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .cart-item {
+        flex-wrap: wrap;
+    }
+    
+    .item-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .item-price {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .financing-tabs {
+        flex-direction: column;
+        border-bottom: none;
+    }
+    
+    .tab-btn {
+        border: 1px solid var(--border-color);
+        border-bottom: none;
+        text-align: center;
+    }
+    
+    .tab-btn:last-child {
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .tab-btn.active {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+}
