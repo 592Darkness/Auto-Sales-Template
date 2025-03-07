@@ -97,7 +97,19 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = 'checkout.html';
         });
     }
+
+    // Update cart count on page load
+    updateCartCount();
 });
+
+// Function to update cart count in the header
+function updateCartCount() {
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cartCount.textContent = cartItems.length.toString();
+    }
+}
 
 // Global cart functionality
 function addToCart(button) {
@@ -106,20 +118,43 @@ function addToCart(button) {
     const productName = card.querySelector('h3').textContent;
     const productPrice = card.querySelector('.price').textContent;
     
-    // Update cart count
-    const cartCount = document.querySelector('.cart-count');
-    if (cartCount) {
-        let count = parseInt(cartCount.textContent);
-        cartCount.textContent = count + 1;
+    // Get compatibility info if available
+    let compatibility = '';
+    const compatibilityElement = card.querySelector('.compatibility');
+    if (compatibilityElement) {
+        compatibility = compatibilityElement.textContent;
     }
     
-    // Store in local storage (for a real implementation)
-    // This would save the cart items to be retrieved on the checkout page
+    // Create item object
     const cartItem = {
         name: productName,
         price: productPrice,
-        quantity: 1
+        quantity: 1,
+        compatibility: compatibility
     };
+    
+    // Get existing cart or initialize empty array
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    
+    // Check if item already exists in cart
+    const existingItemIndex = cartItems.findIndex(item => item.name === productName);
+    
+    if (existingItemIndex >= 0) {
+        // Increment quantity if item already exists
+        cartItems[existingItemIndex].quantity += 1;
+    } else {
+        // Add new item to cart
+        cartItems.push(cartItem);
+    }
+    
+    // Save updated cart to localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    
+    // Update cart count in the header
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+        cartCount.textContent = cartItems.length.toString();
+    }
     
     // Show confirmation message
     const originalText = button.innerHTML;
