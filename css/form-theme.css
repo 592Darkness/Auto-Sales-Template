@@ -1,0 +1,258 @@
+/* 
+   AutoElite - Form Elements Theming
+   Complete styling for all form elements with theme support
+*/
+
+/* -------------- Custom Select Styling -------------- */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.75rem;
+    padding-right: 2rem;
+    width: 100%;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+/* Highlight on focus */
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(53, 99, 233, 0.2);
+}
+
+/* Style for the dropdown options - this only works in Firefox */
+select option {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Special styling for dark theme (these will be handled by JS for cross-browser compatibility) */
+.dark-theme select {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+/* Hover state */
+select:hover {
+    border-color: var(--primary-color);
+}
+
+/* Make the Select element consistent across browsers and OSes */
+@supports (-moz-appearance: none) {
+    /* Firefox-specific styles */
+    select {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+    
+    .dark-theme select {
+        background-color: var(--bg-secondary);
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* Chrome/Safari specific styles */
+    select {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+    
+    .dark-theme select {
+        background-color: var(--bg-secondary);
+    }
+}
+
+/* -------------- Input & Textarea Styling -------------- */
+
+/* Base styling for all form inputs */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="date"],
+textarea {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.25;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus state styling */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(53, 99, 233, 0.2);
+}
+
+/* Hover state */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="tel"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+input[type="url"]:hover,
+input[type="date"]:hover,
+textarea:hover {
+    border-color: var(--primary-color);
+}
+
+/* Placeholder color */
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* Dark theme specific styling */
+.dark-theme input[type="text"],
+.dark-theme input[type="email"],
+.dark-theme input[type="number"],
+.dark-theme input[type="tel"],
+.dark-theme input[type="password"],
+.dark-theme input[type="search"],
+.dark-theme input[type="url"],
+.dark-theme input[type="date"],
+.dark-theme textarea {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+/* Dark theme placeholders */
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* Disabled state */
+input:disabled,
+textarea:disabled,
+select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: var(--bg-accent);
+}
+
+/* Remove browser default appearance for number inputs */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Style for date inputs */
+input[type="date"] {
+    padding-right: 0.5rem;
+}
+
+/* Additional styling for range inputs */
+.range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.range-inputs span {
+    color: var(--text-secondary);
+}
+
+.range-inputs input {
+    flex: 1;
+}
+
+/* Custom styling for checkbox and radio inputs */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+    accent-color: var(--primary-color);
+}
+
+/* Form groups - consistent styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Labels for checkboxes/radios */
+.form-group.checkbox label,
+.form-group.radio label {
+    display: inline;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* Fix for multi-column form layouts */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.form-row .form-group {
+    padding: 0 10px;
+    margin-bottom: 1.5rem;
+}
+
+.half {
+    width: 50%;
+}
+
+.quarter {
+    width: 25%;
+}
+
+/* Responsive adaptations */
+@media (max-width: 768px) {
+    .form-row .half,
+    .form-row .quarter {
+        width: 100%;
+    }
+    
+    input, select, textarea {
+        font-size: 16px; /* Prevents zoom on mobile */
+    }
+}
