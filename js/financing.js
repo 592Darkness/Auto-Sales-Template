@@ -121,18 +121,25 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Switch to application tab
             const applicationTabBtn = document.querySelector('[data-tab="application"]');
-            applicationTabBtn.click();
-            
-            // Scroll to application form
-            document.getElementById('application').scrollIntoView({ behavior: 'smooth' });
-            
-            // Add a nice highlight effect to the form
-            const financingForm = document.getElementById('financing-form');
-            financingForm.classList.add('highlight-form');
-            
-            setTimeout(() => {
-                financingForm.classList.remove('highlight-form');
-            }, 1500);
+            if (applicationTabBtn) {
+                applicationTabBtn.click();
+                
+                // Scroll to application form
+                const applicationForm = document.getElementById('application');
+                if (applicationForm) {
+                    applicationForm.scrollIntoView({ behavior: 'smooth' });
+                
+                    // Add a nice highlight effect to the form
+                    const financingForm = document.getElementById('financing-form');
+                    if (financingForm) {
+                        financingForm.classList.add('highlight-form');
+                        
+                        setTimeout(() => {
+                            financingForm.classList.remove('highlight-form');
+                        }, 1500);
+                    }
+                }
+            }
         });
     }
     
@@ -164,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
                     
-                    // Show success modal
+                    // Show success modal or alert
                     if (applicationModal) {
                         applicationModal.style.display = 'block';
                     } else {
@@ -209,8 +216,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 showError(input, 'Please enter a valid phone number');
                 isValid = false;
             }
-            else if (input.id === 'ssn' && !isValidSSN(input.value)) {
-                showError(input, 'Please enter a valid Social Security Number (XXX-XX-XXXX)');
+            else if (input.id === 'ssn' && !isValidID(input.value)) {
+                showError(input, 'Please enter a valid ID number');
                 isValid = false;
             }
         });
@@ -238,11 +245,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return pattern.test(phone) && phone.replace(/\D/g, '').length >= 7;
     }
     
-    // SSN validation helper
-    function isValidSSN(ssn) {
-        // Simple format check for XXX-XX-XXXX
-        const pattern = /^\d{3}-\d{2}-\d{4}$/;
-        return pattern.test(ssn);
+    // ID validation helper (replaced SSN validation with generic ID validation)
+    function isValidID(id) {
+        // Simple check that ID field is not empty and has reasonable length
+        return id.trim().length >= 5 && id.trim().length <= 20;
     }
     
     // Helper function to show error messages
@@ -276,18 +282,25 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', function() {
                 // Switch to application tab
                 const applicationTabBtn = document.querySelector('[data-tab="application"]');
-                applicationTabBtn.click();
-                
-                // Scroll to application form
-                document.getElementById('application').scrollIntoView({ behavior: 'smooth' });
-                
-                // Add a nice highlight effect to the form
-                const financingForm = document.getElementById('financing-form');
-                financingForm.classList.add('highlight-form');
-                
-                setTimeout(() => {
-                    financingForm.classList.remove('highlight-form');
-                }, 1500);
+                if (applicationTabBtn) {
+                    applicationTabBtn.click();
+                    
+                    // Scroll to application form
+                    const applicationForm = document.getElementById('application');
+                    if (applicationForm) {
+                        applicationForm.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Add a nice highlight effect to the form
+                        const financingForm = document.getElementById('financing-form');
+                        if (financingForm) {
+                            financingForm.classList.add('highlight-form');
+                            
+                            setTimeout(() => {
+                                financingForm.classList.remove('highlight-form');
+                            }, 1500);
+                        }
+                    }
+                }
             });
         });
     }
@@ -297,7 +310,9 @@ document.addEventListener('DOMContentLoaded', function() {
         closeModalButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const modal = this.closest('.modal');
-                modal.style.display = 'none';
+                if (modal) {
+                    modal.style.display = 'none';
+                }
             });
         });
     }
