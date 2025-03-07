@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financing Options - AutoElite | Guyana</title>
+    <!-- Updated CSS paths -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/payment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Updated script paths with dropdown theme support -->
     <script src="js/theme-switcher.js" defer></script>
+    <script src="js/dropdown-theme.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/financing.js" defer></script>
 </head>
@@ -29,10 +32,16 @@
                 </ul>
             </nav>
             <div class="header-cta">
+                <!-- Theme toggle button -->
                 <button class="theme-toggle">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
+                <!-- Cart with counter -->
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
                 <a href="contact.html" class="btn">Get a Quote</a>
             </div>
             <div class="mobile-menu-btn">
@@ -191,8 +200,8 @@
                                 <input type="date" id="date-of-birth" required>
                             </div>
                             <div class="form-group half">
-                                <label for="ssn">Social Security Number</label>
-                                <input type="text" id="ssn" placeholder="XXX-XX-XXXX" required>
+                                <label for="ssn">ID Number</label>
+                                <input type="text" id="ssn" placeholder="Enter your national ID number" required>
                             </div>
                         </div>
                         
@@ -203,7 +212,7 @@
                         
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="(XXX) XXX-XXXX" required>
+                            <input type="tel" id="phone" placeholder="+592 XXX-XXXX" required>
                         </div>
                         
                         <h3>Address Information</h3>
@@ -218,18 +227,17 @@
                                 <input type="text" id="city" required>
                             </div>
                             <div class="form-group quarter">
-                                <label for="state">State</label>
+                                <label for="state">Region</label>
                                 <select id="state" required>
                                     <option value="">Select...</option>
-                                    <option value="AL">Alabama</option>
-                                    <option value="AK">Alaska</option>
-                                    <option value="AZ">Arizona</option>
-                                    <!-- Add all states here -->
-                                    <option value="WY">Wyoming</option>
+                                    <option value="demerara">Demerara</option>
+                                    <option value="essequibo">Essequibo</option>
+                                    <option value="berbice">Berbice</option>
+                                    <!-- Add more regions as needed -->
                                 </select>
                             </div>
                             <div class="form-group quarter">
-                                <label for="zip">ZIP Code</label>
+                                <label for="zip">Postal Code</label>
                                 <input type="text" id="zip" required>
                             </div>
                         </div>
@@ -421,16 +429,6 @@
                     </div>
                     <div class="faq-answer">
                         <p>You'll need a valid driver's license, proof of income (pay stubs or tax returns), proof of residence, and insurance information. For specific situations, additional documentation may be required.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Can I refinance my auto loan later?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer refinancing options that may help lower your payment or reduce your interest rate. This is especially beneficial if your credit score has improved since your initial financing.</p>
                     </div>
                 </div>
             </div>
