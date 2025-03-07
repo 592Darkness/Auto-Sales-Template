@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Parts - AutoElite | Guyana</title>
-    <!-- Updated CSS paths -->
+    <title>Cars Inventory - AutoElite | Guyana</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Updated script paths with dropdown theme support -->
     <script src="js/theme-switcher.js" defer></script>
     <script src="js/dropdown-theme.js" defer></script>
     <script src="js/main.js" defer></script>
@@ -24,20 +22,18 @@
             <nav>
                 <ul class="main-nav">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="cars.html">Cars</a></li>
-                    <li><a href="parts.html" class="active">Auto Parts</a></li>
+                    <li><a href="cars.html" class="active">Cars</a></li>
+                    <li><a href="parts.html">Auto Parts</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-cta">
-                <!-- Theme toggle button -->
                 <button class="theme-toggle">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
-                <!-- Cart with counter -->
-                <a href="checkout.html" class="cart-icon">
+                <a href="#" class="cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
@@ -54,83 +50,19 @@
     <section class="page-banner">
         <div class="container">
             <div class="banner-content">
-                <h1>Auto Parts & Accessories</h1>
-                <p>Quality parts for maintenance, repair, and performance upgrades</p>
+                <h1>Our Vehicle Inventory</h1>
+                <p>Browse our selection of premium new and pre-owned vehicles</p>
             </div>
         </div>
     </section>
 
-    <section class="parts-categories">
-        <div class="container">
-            <h2 class="section-title">Browse by Category</h2>
-            <div class="categories-grid">
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-oil-can"></i>
-                    </div>
-                    <h3>Maintenance</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3>Performance</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-car-battery"></i>
-                    </div>
-                    <h3>Electrical</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Engine Parts</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-car-crash"></i>
-                    </div>
-                    <h3>Body Parts</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-pencil-ruler"></i>
-                    </div>
-                    <h3>Interior</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h3>Audio & Electronics</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-snowflake"></i>
-                    </div>
-                    <h3>Climate Control</h3>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="parts-filter">
+    <section class="cars-filter">
         <div class="container">
             <div class="filter-container">
-                <h2>Find Parts for Your Vehicle</h2>
+                <h2>Find Your Perfect Car</h2>
                 <form class="filter-form">
                     <div class="form-group">
                         <label for="make">Make</label>
-                        <!-- Styled select dropdown -->
                         <select id="make" name="make">
                             <option value="">All Makes</option>
                             <option value="toyota">Toyota</option>
@@ -145,9 +77,21 @@
                     
                     <div class="form-group">
                         <label for="model">Model</label>
-                        <!-- Dropdown that populates based on make selection -->
                         <select id="model" name="model">
                             <option value="">All Models</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="body-type">Body Type</label>
+                        <select id="body-type" name="body-type">
+                            <option value="">All Types</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="coupe">Coupe</option>
+                            <option value="truck">Truck</option>
+                            <option value="hatchback">Hatchback</option>
+                            <option value="convertible">Convertible</option>
                         </select>
                     </div>
                     
@@ -164,21 +108,6 @@
                         </select>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="category">Category</label>
-                        <select id="category" name="category">
-                            <option value="">All Categories</option>
-                            <option value="maintenance">Maintenance</option>
-                            <option value="performance">Performance</option>
-                            <option value="electrical">Electrical</option>
-                            <option value="engine">Engine Parts</option>
-                            <option value="body">Body Parts</option>
-                            <option value="interior">Interior</option>
-                            <option value="audio">Audio & Electronics</option>
-                            <option value="climate">Climate Control</option>
-                        </select>
-                    </div>
-                    
                     <div class="form-group price-range">
                         <label>Price Range</label>
                         <div class="range-inputs">
@@ -188,99 +117,166 @@
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Find Parts</button>
-                    <button type="reset" class="btn btn-outline">Clear All</button>
+                    <button type="submit" class="btn btn-primary">Filter Results</button>
+                    <button type="reset" class="btn btn-outline">Clear Filters</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="parts-listing">
+    <section class="cars-listing">
         <div class="container">
             <div class="listing-header">
                 <div class="results-count">
-                    <p>Showing <span id="results-number">12</span> products</p>
+                    <p>Showing <span id="results-number">12</span> vehicles</p>
                 </div>
                 <div class="sort-options">
                     <label for="sort-by">Sort by:</label>
                     <select id="sort-by" name="sort-by">
-                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
-                        <option value="newest">Newest</option>
+                        <option value="mileage">Mileage: Low to High</option>
                     </select>
                 </div>
             </div>
             
-            <div class="parts-grid">
-                <!-- Part 1 -->
-                <div class="part-card">
+            <div class="cars-grid">
+                <!-- Car 1 -->
+                <div class="car-card">
                     <div class="card-image">
-                        <img src="/api/placeholder/300/300" alt="Performance Brake Kit">
+                        <img src="/api/placeholder/400/300" alt="2025 Premium SUV">
+                        <span class="tag">New Arrival</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>2025 Premium SUV</h3>
+                        <p class="price">G$9,199,800</p>
+                        <div class="specs">
+                            <span><i class="fas fa-road"></i> 0 miles</span>
+                            <span><i class="fas fa-gas-pump"></i> 28 MPG</span>
+                            <span><i class="fas fa-cog"></i> Automatic</span>
+                        </div>
+                        <p class="description">Brand new premium SUV with advanced safety features, panoramic sunroof, and premium sound system.</p>
+                        <div class="card-actions">
+                            <a href="car-details.html" class="btn btn-primary">View Details</a>
+                            <a href="financing.html" class="btn btn-secondary">Financing Options</a>
+                            <button class="btn-save"><i class="far fa-heart"></i></button>
+                            <button class="btn-compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 2 -->
+                <div class="car-card">
+                    <div class="card-image">
+                        <img src="/api/placeholder/400/300" alt="2024 Luxury Sedan">
                         <span class="tag">Best Seller</span>
                     </div>
                     <div class="card-content">
-                        <h3>Performance Brake Kit</h3>
-                        <p class="price">G$69,998</p>
-                        <p class="compatibility">Compatible with multiple luxury models</p>
+                        <h3>2024 Luxury Sedan</h3>
+                        <p class="price">G$7,700,000</p>
+                        <div class="specs">
+                            <span><i class="fas fa-road"></i> 12,500 miles</span>
+                            <span><i class="fas fa-gas-pump"></i> 32 MPG</span>
+                            <span><i class="fas fa-cog"></i> Automatic</span>
+                        </div>
+                        <p class="description">Elegant luxury sedan with leather interior, heated seats, and advanced driver assistance.</p>
                         <div class="card-actions">
-                            <a href="part-details.html" class="btn btn-primary">View Details</a>
-                            <button class="btn-cart" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i></button>
+                            <a href="car-details.html" class="btn btn-primary">View Details</a>
+                            <button class="btn-save"><i class="far fa-heart"></i></button>
+                            <button class="btn-compare"><i class="fas fa-exchange-alt"></i></button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Part 2 -->
-                <div class="part-card">
+                <!-- Car 3 -->
+                <div class="car-card">
                     <div class="card-image">
-                        <img src="/api/placeholder/300/300" alt="Premium Oil Change Kit">
+                        <img src="/api/placeholder/400/300" alt="2024 Electric Crossover">
+                        <span class="tag">Electric</span>
                     </div>
                     <div class="card-content">
-                        <h3>Premium Oil Change Kit</h3>
-                        <p class="price">G$17,998</p>
-                        <p class="compatibility">Compatible with multiple models</p>
+                        <h3>2024 Electric Crossover</h3>
+                        <p class="price">G$10,550,000</p>
+                        <div class="specs">
+                            <span><i class="fas fa-bolt"></i> 310 mile range</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 0-60: 4.8s</span>
+                            <span><i class="fas fa-cog"></i> AWD</span>
+                        </div>
+                        <p class="description">Cutting-edge electric crossover with impressive range, fast charging capability, and spacious interior.</p>
                         <div class="card-actions">
-                            <a href="part-details.html" class="btn btn-primary">View Details</a>
-                            <button class="btn-cart" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i></button>
+                            <a href="car-details.html" class="btn btn-primary">View Details</a>
+                            <button class="btn-save"><i class="far fa-heart"></i></button>
+                            <button class="btn-compare"><i class="fas fa-exchange-alt"></i></button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Part 3 -->
-                <div class="part-card">
+                <!-- Car 4 -->
+                <div class="car-card">
                     <div class="card-image">
-                        <img src="/api/placeholder/300/300" alt="Alloy Wheel Set">
-                        <span class="tag">New</span>
+                        <img src="/api/placeholder/400/300" alt="2023 Compact SUV">
                     </div>
                     <div class="card-content">
-                        <h3>Alloy Wheel Set (4)</h3>
-                        <p class="price">G$179,998</p>
-                        <p class="compatibility">18" - Multiple fitments available</p>
+                        <h3>2023 Compact SUV</h3>
+                        <p class="price">G$6,580,000</p>
+                        <div class="specs">
+                            <span><i class="fas fa-road"></i> 18,750 miles</span>
+                            <span><i class="fas fa-gas-pump"></i> 30 MPG</span>
+                            <span><i class="fas fa-cog"></i> Automatic</span>
+                        </div>
+                        <p class="description">Versatile compact SUV with great fuel economy, ample cargo space, and advanced infotainment system.</p>
                         <div class="card-actions">
-                            <a href="part-details.html" class="btn btn-primary">View Details</a>
-                            <button class="btn-cart" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i></button>
+                            <a href="car-details.html" class="btn btn-primary">View Details</a>
+                            <button class="btn-save"><i class="far fa-heart"></i></button>
+                            <button class="btn-compare"><i class="fas fa-exchange-alt"></i></button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Part 4 -->
-                <div class="part-card">
+                <!-- Car 5 -->
+                <div class="car-card">
                     <div class="card-image">
-                        <img src="/api/placeholder/300/300" alt="Air Filter">
+                        <img src="/api/placeholder/400/300" alt="2024 Sport Coupe">
                     </div>
                     <div class="card-content">
-                        <h3>High Performance Air Filter</h3>
-                        <p class="price">G$11,998</p>
-                        <p class="compatibility">Fits most sedan models 2020-2025</p>
+                        <h3>2024 Sport Coupe</h3>
+                        <p class="price">G$9,780,000</p>
+                        <div class="specs">
+                            <span><i class="fas fa-road"></i> 5,200 miles</span>
+                            <span><i class="fas fa-gas-pump"></i> 26 MPG</span>
+                            <span><i class="fas fa-cog"></i> Automatic</span>
+                        </div>
+                        <p class="description">Dynamic sport coupe with powerful engine, responsive handling, and premium sport seats.</p>
                         <div class="card-actions">
-                            <a href="part-details.html" class="btn btn-primary">View Details</a>
-                            <button class="btn-cart" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i></button>
+                            <a href="car-details.html" class="btn btn-primary">View Details</a>
+                            <button class="btn-save"><i class="far fa-heart"></i></button>
+                            <button class="btn-compare"><i class="fas fa-exchange-alt"></i></button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Additional products would continue here -->
-                
+                <!-- Car 6 -->
+                <div class="car-card">
+                    <div class="card-image">
+                        <img src="/api/placeholder/400/300" alt="2022 Family Minivan">
+                    </div>
+                    <div class="card-content">
+                        <h3>2022 Family Minivan</h3>
+                        <p class="price">G$5,950,000</p>
+                        <div class="specs">
+                            <span><i class="fas fa-road"></i> 35,600 miles</span>
+                            <span><i class="fas fa-gas-pump"></i> 25 MPG</span>
+                            <span><i class="fas fa-cog"></i> Automatic</span>
+                        </div>
+                        <p class="description">Spacious family minivan with flexible seating, rear entertainment system, and numerous safety features.</p>
+                        <div class="card-actions">
+                            <a href="car-details.html" class="btn btn-primary">View Details</a>
+                            <button class="btn-save"><i class="far fa-heart"></i></button>
+                            <button class="btn-compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="pagination">
@@ -294,38 +290,15 @@
         </div>
     </section>
 
-    <section class="brands">
-        <div class="container">
-            <h2 class="section-title">Top Brands We Carry</h2>
-            <div class="brands-grid">
-                <div class="brand-logo">
-                    <img src="/api/placeholder/150/80" alt="Brand 1">
-                </div>
-                <div class="brand-logo">
-                    <img src="/api/placeholder/150/80" alt="Brand 2">
-                </div>
-                <div class="brand-logo">
-                    <img src="/api/placeholder/150/80" alt="Brand 3">
-                </div>
-                <div class="brand-logo">
-                    <img src="/api/placeholder/150/80" alt="Brand 4">
-                </div>
-                <div class="brand-logo">
-                    <img src="/api/placeholder/150/80" alt="Brand 5">
-                </div>
-                <div class="brand-logo">
-                    <img src="/api/placeholder/150/80" alt="Brand 6">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Can't Find the Part You Need?</h2>
-                <p>Our parts specialists can help you locate the exact part for your vehicle</p>
-                <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+                <h2>Need Financing Options?</h2>
+                <p>Our flexible financing plans can help you drive away in your dream car today</p>
+                <div class="cta-buttons">
+                    <a href="financing.html" class="btn btn-primary">View Financing Options</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
             </div>
         </div>
     </section>
