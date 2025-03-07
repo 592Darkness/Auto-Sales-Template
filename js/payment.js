@@ -79,136 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Handle quantity changes
-    if (minusButtons.length > 0 && plusButtons.length > 0 && quantityInputs.length > 0) {
-        // Decrease quantity
-        minusButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const input = this.parentElement.querySelector('input');
-                let value = parseInt(input.value);
-                
-                if (value > 1) {
-                    input.value = value - 1;
-                    updateCartTotals();
-                }
-            });
-        });
-        
-        // Increase quantity
-        plusButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const input = this.parentElement.querySelector('input');
-                let value = parseInt(input.value);
-                
-                if (value < parseInt(input.max)) {
-                    input.value = value + 1;
-                    updateCartTotals();
-                }
-            });
-        });
-        
-        // Directly change quantity
-        quantityInputs.forEach(input => {
-            input.addEventListener('change', function() {
-                let value = parseInt(this.value);
-                
-                // Ensure minimum quantity of 1
-                if (value < 1) {
-                    this.value = 1;
-                }
-                
-                // Ensure maximum quantity
-                if (value > parseInt(this.max)) {
-                    this.value = this.max;
-                }
-                
-                updateCartTotals();
-            });
-        });
-    }
-    
-    // Remove items from cart
-    if (removeButtons.length > 0) {
-        removeButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const cartItem = this.closest('.cart-item');
-                
-                // Confirm removal
-                if (confirm('Are you sure you want to remove this item from your cart?')) {
-                    cartItem.style.opacity = '0';
-                    setTimeout(() => {
-                        cartItem.remove();
-                        updateCartTotals();
-                        
-                        // Check if cart is empty
-                        const remainingItems = document.querySelectorAll('.cart-item');
-                        if (remainingItems.length === 0) {
-                            const cartItems = document.querySelector('.cart-items');
-                            cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty. <a href="parts.html">Continue shopping</a></p>';
-                        }
-                    }, 300);
-                }
-            });
-        });
-    }
-    
-    // Update cart totals when quantities change
-    function updateCartTotals() {
-        // In a real implementation, this would calculate actual totals from the cart items
-        // For this demo, we'll just use placeholder values and simulate changes
-        
-        // Get all quantity inputs and their values
-        const quantities = Array.from(document.querySelectorAll('.item-quantity input')).map(input => parseInt(input.value));
-        
-        // Get all price elements (grab text content and convert to number)
-        const prices = Array.from(document.querySelectorAll('.item-price p')).map(p => {
-            // Remove G$ symbol and commas for calculation
-            return parseFloat(p.textContent.replace('G$', '').replace(/,/g, ''));
-        });
-        
-        // Calculate subtotal
-        let subtotal = 0;
-        for (let i = 0; i < quantities.length; i++) {
-            subtotal += prices[i] * quantities[i];
-        }
-        
-        // Calculate shipping (fixed for demo)
-        const shipping = 2500;
-        
-        // Calculate tax (for demo: 8.25% of subtotal)
-        const tax = subtotal * 0.0825;
-        
-        // Calculate total
-        const total = subtotal + shipping + tax;
-        
-        // Helper function to format number with commas for thousands
-        function formatNumber(num) {
-            return num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        
-        // Update summary elements
-        const summaryRows = document.querySelectorAll('.summary-row');
-        if (summaryRows.length >= 4) {
-            // Subtotal
-            summaryRows[0].querySelector('span:last-child').textContent = 'G$' + formatNumber(subtotal);
-            
-            // Shipping
-            summaryRows[1].querySelector('span:last-child').textContent = 'G$' + formatNumber(shipping);
-            
-            // Tax
-            summaryRows[2].querySelector('span:last-child').textContent = 'G$' + formatNumber(tax);
-            
-            // Total
-            summaryRows[3].querySelector('span:last-child').textContent = 'G$' + formatNumber(total);
-            
-            // Update pay now button text
-            const payButton = document.querySelector('#payment-form button[type="submit"]');
-            if (payButton) {
-                payButton.textContent = 'Pay Now G$' + formatNumber(total);
-            }
-        }
-    }
-    
     // Handle payment form submission
     if (paymentForm) {
         paymentForm.addEventListener('submit', function(e) {
@@ -227,6 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Reset button
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
+                    
+                    // Clear cart items from localStorage after successful payment
+                    localStorage.removeItem('cartItems');
                     
                     // Show success modal
                     if (paymentSuccessModal) {
@@ -363,3 +236,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Function to calculate and update cart totals
+function updateCartTotals() {
+    // Get cart items from localStorage for real calculations
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    
+    // Calculate subtotal from cart items
+    let subtotal = 0;
+    cartItems.forEach(item => {
+        // Parse price (remove G$ and commas)
+        const itemPrice = parseFloat(item.price.replace('G$', '').replace(/,/g, ''));
+        subtotal += itemPrice * item.quantity;
+    });
+    
+    // Calculate shipping (fixed for demo)
+    const shipping = 2500;
+    
+    // Calculate tax (for demo: 8.25% of subtotal)
+    const tax = subtotal * 0.0825;
+    
+    // Calculate total
+    const total = subtotal + shipping + tax;
+    
+    // Helper function to format number with commas for thousands
+    function formatNumber(num) {
+        return num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    
+    // Update summary elements
+    const summaryRows = document.querySelectorAll('.summary-row');
+    if (summaryRows.length >= 4) {
+        // Subtotal
+        summaryRows[0].querySelector('span:last-child').textContent = 'G$' + formatNumber(subtotal);
+        
+        // Shipping
+        summaryRows[1].querySelector('span:last-child').textContent = 'G$' + formatNumber(shipping);
+        
+        // Tax
+        summaryRows[2].querySelector('span:last-child').textContent = 'G$' + formatNumber(tax);
+        
+        // Total
+        summaryRows[3].querySelector('span:last-child').textContent = 'G$' + formatNumber(total);
+        
+        // Update pay now button text
+        const payButton = document.querySelector('#payment-form button[type="submit"]');
+        if (payButton) {
+            payButton.textContent = 'Pay Now G$' + formatNumber(total);
+        }
+    }
+}
