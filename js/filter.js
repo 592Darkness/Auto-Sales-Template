@@ -46,6 +46,28 @@ document.addEventListener('DOMContentLoaded', function() {
         filterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Get all filter values
+            const make = makeSelect ? makeSelect.value : '';
+            const model = modelSelect ? modelSelect.value : '';
+            const year = document.getElementById('year') ? document.getElementById('year').value : '';
+            const bodyType = document.getElementById('body-type') ? document.getElementById('body-type').value : '';
+            const category = document.getElementById('category') ? document.getElementById('category').value : '';
+            const minPrice = document.getElementById('min-price') ? document.getElementById('min-price').value : '';
+            const maxPrice = document.getElementById('max-price') ? document.getElementById('max-price').value : '';
+            
+            // Construct filter object for logging/debugging
+            const filters = {
+                make,
+                model,
+                year,
+                bodyType,
+                category,
+                minPrice,
+                maxPrice
+            };
+            
+            console.log('Applied filters:', filters);
+            
             // In a real application, this would send an AJAX request
             // or update the URL parameters to filter results
             
@@ -101,16 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     icon.classList.add('far');
                     alert('Vehicle removed from favorites!');
                 }
-            });
-        });
-    }
-    
-    // Handle cart buttons
-    const cartButtons = document.querySelectorAll('.btn-cart');
-    if (cartButtons.length > 0) {
-        cartButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                alert('Item added to cart!');
             });
         });
     }
