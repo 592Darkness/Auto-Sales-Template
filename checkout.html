@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - AutoElite | Guyana</title>
+    <!-- Updated CSS paths -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/payment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Updated script paths with dropdown theme support -->
     <script src="js/theme-switcher.js" defer></script>
+    <script src="js/dropdown-theme.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/payment.js" defer></script>
 </head>
@@ -29,13 +32,15 @@
                 </ul>
             </nav>
             <div class="header-cta">
+                <!-- Theme toggle button -->
                 <button class="theme-toggle">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
-                <a href="#" class="cart-icon">
+                <!-- Cart link with counter -->
+                <a href="checkout.html" class="cart-icon">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">3</span>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
             <div class="mobile-menu-btn">
@@ -77,69 +82,16 @@
                     <!-- Cart Items -->
                     <div class="checkout-column">
                         <h2>Your Cart</h2>
+                        <!-- Cart items container for dynamic loading -->
                         <div class="cart-items">
-                            <div class="cart-item">
-                                <div class="item-image">
-                                    <img src="/api/placeholder/100/100" alt="Performance Brake Kit">
-                                </div>
-                                <div class="item-details">
-                                    <h3>Performance Brake Kit</h3>
-                                    <p class="item-compatibility">Compatible with multiple luxury models</p>
-                                    <div class="item-quantity">
-                                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-                                        <input type="number" value="1" min="1" max="10">
-                                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
-                                    </div>
-                                </div>
-                                <div class="item-price">
-                                    <p>G$69,998</p>
-                                    <button class="remove-item"><i class="fas fa-trash"></i></button>
-                                </div>
-                            </div>
-
-                            <div class="cart-item">
-                                <div class="item-image">
-                                    <img src="/api/placeholder/100/100" alt="Oil Change Kit">
-                                </div>
-                                <div class="item-details">
-                                    <h3>Premium Oil Change Kit</h3>
-                                    <p class="item-compatibility">Compatible with multiple models</p>
-                                    <div class="item-quantity">
-                                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-                                        <input type="number" value="1" min="1" max="10">
-                                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
-                                    </div>
-                                </div>
-                                <div class="item-price">
-                                    <p>G$17,998</p>
-                                    <button class="remove-item"><i class="fas fa-trash"></i></button>
-                                </div>
-                            </div>
-
-                            <div class="cart-item">
-                                <div class="item-image">
-                                    <img src="/api/placeholder/100/100" alt="LED Headlights">
-                                </div>
-                                <div class="item-details">
-                                    <h3>LED Headlight Conversion Kit</h3>
-                                    <p class="item-compatibility">Universal fit with adapters</p>
-                                    <div class="item-quantity">
-                                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-                                        <input type="number" value="1" min="1" max="10">
-                                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
-                                    </div>
-                                </div>
-                                <div class="item-price">
-                                    <p>G$25,998</p>
-                                    <button class="remove-item"><i class="fas fa-trash"></i></button>
-                                </div>
-                            </div>
+                            <!-- Cart items will be loaded dynamically -->
+                            <p class="empty-cart-message">Loading your cart...</p>
                         </div>
 
                         <div class="cart-summary">
                             <div class="summary-row">
                                 <span>Subtotal:</span>
-                                <span>G$113,994</span>
+                                <span>G$0</span>
                             </div>
                             <div class="summary-row">
                                 <span>Shipping:</span>
@@ -147,11 +99,11 @@
                             </div>
                             <div class="summary-row">
                                 <span>Tax:</span>
-                                <span>G$9,398</span>
+                                <span>G$0</span>
                             </div>
                             <div class="summary-row total">
                                 <span>Total:</span>
-                                <span>G$125,892</span>
+                                <span>G$2,500</span>
                             </div>
                         </div>
                     </div>
@@ -222,7 +174,7 @@
                                 <label for="save-card">Save card for future purchases</label>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Pay Now G$125,892</button>
+                            <button type="submit" class="btn btn-primary btn-block">Pay Now G$2,500</button>
 
                             <div class="secure-badge">
                                 <i class="fas fa-lock"></i> Secure payment - Your data is protected
@@ -298,7 +250,7 @@
                 <div class="success-icon">
                     <i class="fas fa-check-circle"></i>
                 </div>
-                <p>Your payment of <strong>G$125,892</strong> has been processed successfully.</p>
+                <p>Your payment of <strong>G$0</strong> has been processed successfully.</p>
                 <p>Order Number: <strong>#AE-29875</strong></p>
                 <p>A confirmation email has been sent to your email address.</p>
                 <div class="modal-actions">
@@ -308,5 +260,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Add the cart loading script -->
+    <script src="js/load-cart.js"></script>
 </body>
 </html>
