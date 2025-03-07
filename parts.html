@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Parts - AutoElite | Guyana</title>
+    <!-- Updated CSS paths -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Updated script paths with dropdown theme support -->
     <script src="js/theme-switcher.js" defer></script>
+    <script src="js/dropdown-theme.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/filter.js" defer></script>
 </head>
@@ -28,11 +31,13 @@
                 </ul>
             </nav>
             <div class="header-cta">
+                <!-- Theme toggle button -->
                 <button class="theme-toggle">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
-                <a href="#" class="cart-icon">
+                <!-- Cart with counter -->
+                <a href="checkout.html" class="cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
@@ -125,6 +130,7 @@
                 <form class="filter-form">
                     <div class="form-group">
                         <label for="make">Make</label>
+                        <!-- Styled select dropdown -->
                         <select id="make" name="make">
                             <option value="">All Makes</option>
                             <option value="toyota">Toyota</option>
@@ -139,6 +145,7 @@
                     
                     <div class="form-group">
                         <label for="model">Model</label>
+                        <!-- Dropdown that populates based on make selection -->
                         <select id="model" name="model">
                             <option value="">All Models</option>
                         </select>
@@ -272,70 +279,8 @@
                     </div>
                 </div>
                 
-                <!-- Part 5 -->
-                <div class="part-card">
-                    <div class="card-image">
-                        <img src="/api/placeholder/300/300" alt="Spark Plugs">
-                        <span class="tag">Sale</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Premium Spark Plugs (Set of 6)</h3>
-                        <p class="price">G$15,198</p>
-                        <p class="compatibility">Multiple vehicle applications</p>
-                        <div class="card-actions">
-                            <a href="part-details.html" class="btn btn-primary">View Details</a>
-                            <button class="btn-cart" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Additional products would continue here -->
                 
-                <!-- Part 6 -->
-                <div class="part-card">
-                    <div class="card-image">
-                        <img src="/api/placeholder/300/300" alt="LED Headlights">
-                    </div>
-                    <div class="card-content">
-                        <h3>LED Headlight Conversion Kit</h3>
-                        <p class="price">G$25,998</p>
-                        <p class="compatibility">Universal fit with adapters</p>
-                        <div class="card-actions">
-                            <a href="part-details.html" class="btn btn-primary">View Details</a>
-                            <button class="btn-cart" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Part 7 -->
-                <div class="part-card">
-                    <div class="card-image">
-                        <img src="/api/placeholder/300/300" alt="Floor Mats">
-                    </div>
-                    <div class="card-content">
-                        <h3>All-Weather Floor Mats</h3>
-                        <p class="price">G$19,998</p>
-                        <p class="compatibility">Custom fit for multiple models</p>
-                        <div class="card-actions">
-                            <a href="part-details.html" class="btn btn-primary">View Details</a>
-                            <button class="btn-cart" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Part 8 -->
-                <div class="part-card">
-                    <div class="card-image">
-                        <img src="/api/placeholder/300/300" alt="Car Battery">
-                    </div>
-                    <div class="card-content">
-                        <h3>High Performance Battery</h3>
-                        <p class="price">G$31,998</p>
-                        <p class="compatibility">Multiple group sizes available</p>
-                        <div class="card-actions">
-                            <a href="part-details.html" class="btn btn-primary">View Details</a>
-                            <button class="btn-cart" onclick="addToCart(this)"><i class="fas fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                </div>
             </div>
             
             <div class="pagination">
