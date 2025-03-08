@@ -11,8 +11,33 @@
     <script src="js/form-theme.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/contact.js" defer></script>
+    <style>
+        /* Responsive map styles */
+        .map-responsive {
+            overflow: hidden;
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .map-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        
+        .map-actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body class="light-theme">
+<body class="light-theme contact-page">
     <header>
         <div class="container">
             <div class="logo">
@@ -105,7 +130,7 @@
                         <div class="info-content">
                             <h3>Business Hours</h3>
                             <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                            <p>Saturday: 9:00 AM - 5:00 PM</p>
+                            <p>Saturday: a9:00 AM - 5:00 PM</p>
                             <p>Sunday: Closed</p>
                         </div>
                     </div>
@@ -180,13 +205,13 @@
         <div class="container">
             <h2 class="section-title">Find Us</h2>
             <div class="map-container">
-                <!-- In a real implementation, this would be a Google Maps embed or similar -->
-                <div class="map-placeholder">
-                    <img src="img/maps/store-location-map.jpg" alt="Map location">
-                    <div class="map-overlay">
-                        <p>Interactive map would be embedded here</p>
-                        <a href="#" class="btn btn-primary">Get Directions</a>
-                    </div>
+                <!-- Responsive Google Maps iframe -->
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15847.749124312142!2d-58.1826572076294!3d6.777488349064211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgy!4v1741450847359!5m2!1sen!2sgy" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- Get Directions button below the map -->
+                <div class="map-actions">
+                    <a href="https://goo.gl/maps/JzeWF9ZwLRvCc6VG8" target="_blank" class="btn btn-primary">Get Directions</a>
                 </div>
             </div>
         </div>
