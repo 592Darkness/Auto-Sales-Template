@@ -12,14 +12,25 @@
     <script src="js/main.js" defer></script>
     <script src="js/contact.js" defer></script>
     <style>
-        /* Responsive map styles */
+        /* Fixed map styles to prevent overlap */
+        .map-section {
+            padding: 60px 0;
+            clear: both; /* Ensures the section doesn't overlap with previous content */
+        }
+        
+        .map-container {
+            margin-top: 30px;
+            height: auto; /* Changed from fixed height to auto */
+            width: 100%;
+        }
+        
         .map-responsive {
             overflow: hidden;
             position: relative;
             height: 0;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* Increased margin to prevent overlap */
         }
         
         .map-responsive iframe {
@@ -33,7 +44,18 @@
         
         .map-actions {
             text-align: center;
-            margin-top: 20px;
+            margin: 20px 0 40px 0; /* Added bottom margin */
+            position: relative; /* Ensure positioned properly */
+            z-index: 10; /* Make sure this appears above other elements */
+        }
+        
+        /* Ensure departments section doesn't overlap */
+        .departments-section {
+            clear: both;
+            position: relative;
+            z-index: 5;
+            margin-top: 40px; /* Add extra margin at the top */
+            padding-top: 60px; /* Add padding to the top */
         }
     </style>
 </head>
@@ -130,7 +152,7 @@
                         <div class="info-content">
                             <h3>Business Hours</h3>
                             <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                            <p>Saturday: a9:00 AM - 5:00 PM</p>
+                            <p>Saturday: 9:00 AM - 5:00 PM</p>
                             <p>Sunday: Closed</p>
                         </div>
                     </div>
