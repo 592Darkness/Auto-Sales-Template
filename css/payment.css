@@ -5,7 +5,7 @@
 
 /* -------------- Common Styles -------------- */
 .page-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/300') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/banners/banner-checkout.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 60px 0;
@@ -827,4 +827,13 @@
         color: white;
         border-color: var(--primary-color);
     }
+}
+
+/* Page-specific banner images */
+body.financing-page .page-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/banners/banner-financing.jpg') center/cover no-repeat;
+}
+
+body.checkout-page .page-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/banners/banner-checkout.jpg') center/cover no-repeat;
 }
